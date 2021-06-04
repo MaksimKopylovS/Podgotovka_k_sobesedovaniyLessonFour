@@ -1,0 +1,11 @@
+select `bilety`.`id`билеты, `kinoteatr`.`name`Кинотеатр, `zaliy`.`name`Зал,
+ `films`.`name`Фильм, `films`.`duration`длительность, `time`.`time`начало,
+ `data`.`data`Дата, `price`.`price`Цена
+ from bilety
+inner join `data` on bilety.id_data = `data`.`id`
+inner join `films` on bilety.id_filma = `films`.`id`
+inner join `kinoteatr` on bilety.id_kinoteatr = `kinoteatr`.`id`
+inner join `price` on bilety.id_price = `price`.`id`
+inner join `time` on bilety.id_time = `time`.`id`
+inner join `zaliy` on bilety.id_zal = `zaliy`.`id`
+order by `films`.`duration` desc
